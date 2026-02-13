@@ -12,7 +12,7 @@
   --body: "Playfair Display", serif;
 
   /* Optional: set this to your image path (or keep the fallback gradient) */
-  --canvas-bg-image: url("/images/background.png");
+  --canvas-bg-image: url("../images/background.png");
 }
 
 *{ box-sizing:border-box; }
@@ -151,4 +151,5 @@ canvas{
 
 .backBtn:active{
   transform: scale(.98);
+
 }
