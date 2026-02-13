@@ -1,0 +1,224 @@
+:root{
+  --text: rgba(255,255,255,.92);
+  --text-strong: rgba(255,255,255,.98);
+
+  --bubblegum: #ff59b7;
+  --bubblegum-dark: #ff2aa0;
+
+  --border: rgba(255,255,255,.65);
+  --shadow: 0 22px 80px rgba(0,0,0,.35);
+
+  --fancy: "Great Vibes", cursive;
+  --body: "Playfair Display", serif;
+}
+
+*{ box-sizing:border-box; }
+html, body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: var(--body);
+  color: var(--text);
+
+  display:grid;
+  place-items:center;
+  padding: 24px;
+}
+
+.page{
+  width: min(980px, 94vw);
+  text-align:center;
+  display:grid;
+  gap: 12px;
+  justify-items:center;
+}
+
+.title{
+  margin:0;
+  font-family: var(--fancy);
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 1;
+  color: var(--text-strong);
+  text-shadow: 0 18px 55px rgba(0,0,0,.45);
+}
+.sub{
+  margin:0;
+  opacity:.9;
+  font-size: 16px;
+}
+
+.presentArea{
+  width: min(920px, 94vw);
+  display:grid;
+  gap: 14px;
+  place-items:center;
+  padding-top: 8px;
+}
+
+/* ===== Gift ===== */
+.gift{
+  width: 260px;
+  height: 260px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  place-items: center;
+  user-select:none;
+  outline: none;
+  transition: transform .12s ease;
+}
+.gift:hover{ transform: translateY(-2px); }
+.gift:active{ transform: translateY(0) scale(.99); }
+
+.giftBox{
+  width: 230px;
+  height: 168px;
+  border-radius: 22px;
+  background: rgba(255,255,255,.06);
+  border: 3px solid var(--border);
+  box-shadow: 0 22px 70px rgba(0,0,0,.35);
+}
+
+.giftLid{
+  position: absolute;
+  width: 242px;
+  height: 84px;
+  top: 46px;
+  border-radius: 18px;
+  background: rgba(255,89,183,.85);
+  border: 3px solid rgba(255,255,255,.70);
+  transform-origin: 18% 100%;
+  transition: transform .55s ease;
+  box-shadow: 0 22px 80px rgba(255,89,183,.20);
+}
+
+/* ribbon down the middle */
+.giftRibbon{
+  position: absolute;
+  width: 44px;
+  height: 168px;
+  top: 92px;
+  border-radius: 14px;
+  background: rgba(255,89,183,.45);
+  border: 2px solid rgba(255,255,255,.35);
+}
+
+/* bow */
+.giftBow{
+  position: absolute;
+  top: 26px;
+  width: 108px;
+  height: 54px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.55);
+  border: 2px solid rgba(255,255,255,.50);
+  box-shadow: 0 18px 50px rgba(0,0,0,.20);
+  opacity: .98;
+}
+
+.giftTag{
+  position:absolute;
+  bottom: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,89,183,.95);
+  border: 2px solid rgba(255,255,255,.75);
+  color: #1b0b16;
+  font-weight: 700;
+  box-shadow: 0 18px 45px rgba(255, 89, 183, .22);
+}
+
+/* open state */
+.gift.open .giftLid{
+  transform: rotate(-36deg) translate(-16px, -10px);
+}
+
+/* ===== Reveal ===== */
+.revealWrap{
+  display:none;
+  width: min(80vw, 420px);
+  text-align:center;
+}
+.revealWrap.show{ display:block; }
+
+.revealCard{
+  width: 100%;
+  border-radius: 26px;
+  overflow:hidden;
+  border: 3px solid rgba(255,255,255,.70);
+  box-shadow: 0 28px 110px rgba(0,0,0,.45);
+  background: rgba(255,255,255,.05);
+  animation: revealPop .55s ease both;
+}
+@keyframes revealPop{
+  0%{ transform: translateY(10px) scale(.97); opacity:0; filter: blur(3px); }
+  70%{ transform: translateY(0) scale(1.01); opacity:1; filter: blur(0); }
+  100%{ transform: translateY(0) scale(1); opacity:1; }
+}
+
+.revealCard img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.hint{
+  margin: 10px 0 0;
+  opacity: .85;
+  font-size: 14px;
+}
+
+/* Toast */
+.toast{
+  min-height: 24px;
+  margin-top: 4px;
+  font-size: 15px;
+  color: var(--text-strong);
+  opacity:.95;
+}
+
+/* small FX */
+.particle{
+  position: fixed;
+  left: 0; top: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.95;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.28));
+  animation: particleFly .95s ease forwards;
+}
+@keyframes particleFly{
+  0%   { transform: translate(0,0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)) scale(0.6); opacity: 0; }
+}
+.backBtn{
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 999;
+
+  text-decoration: none;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+
+  background: rgba(255,89,183,.95);
+  color: #ffffff;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,.75);
+
+  box-shadow: 0 14px 40px rgba(0,0,0,.25);
+  transition: transform .12s ease, background .12s ease;
+}
+
+.backBtn:hover{
+  background: rgba(255,42,160,.98);
+  transform: translateY(-1px);
+}
+
+.backBtn:active{
+  transform: scale(.98);
+}

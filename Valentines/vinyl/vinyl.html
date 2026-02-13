@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vinyl Player 🎶</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../shared-bg.css">
+  <link rel="stylesheet" href="./vinyl.css" />
+</head>
+
+<body>
+  <a href="../index.html" class="backBtn">← Back</a>
+
+  <main class="page">
+    <h1 class="title">Pick a Vinyl 🎶</h1>
+    <p class="sub">Drag a record onto the player to start music. (Tap a record on mobile.)</p>
+
+    <section class="vinylDnD" aria-label="Vinyl drag and drop player">
+
+      <div class="vinylShelf" aria-label="Vinyl shelf">
+
+        <!-- Song 1 -->
+        <div class="vinyl" draggable="true" aria-grabbed="false"
+             data-label="Golden Brown"
+             data-soundcloud="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/arttu-42338154/golden-brown-slowed&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=true">
+          <div class="vinylDisc">
+            <img class="vinylArt" src="../images/label1.png" alt="" draggable="false">
+          </div>
+          <div class="vinylLabel">Golden Brown</div>
+        </div>
+
+        <!-- Song 2 -->
+        <div class="vinyl" draggable="true" aria-grabbed="false"
+             data-label="Caribbean Blue"
+             data-soundcloud="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/merry-natasha/carribean-blue-enya-slowed-3&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=true">
+          <div class="vinylDisc">
+            <img class="vinylArt" src="../images/label2.png" alt="" draggable="false">
+          </div>
+          <div class="vinylLabel">Caribbean Blue</div>
+        </div>
+
+        <!-- Song 3 -->
+        <div class="vinyl" draggable="true" aria-grabbed="false"
+             data-label="Can’t Help Falling in Love"
+             data-soundcloud="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/elvissonymusic/cant-help-falling-in-895474729&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&visual=true">
+          <div class="vinylDisc">
+            <img class="vinylArt" src="../images/label3.png" alt="" draggable="false">
+          </div>
+          <div class="vinylLabel">Falling in Love</div>
+        </div>
+
+      </div>
+
+      <!-- PLAYER / DROP ZONE -->
+      <div class="dropZone" id="dropZone" aria-label="Drop zone player">
+        <div class="dropZoneHint">
+          <span class="pill">Drop a vinyl here</span>
+          <span class="pill" id="nowPlaying">Now Playing: —</span>
+        </div>
+
+        <!-- Turntable deck -->
+        <div class="turntable" id="turntable" aria-label="Turntable">
+          <div class="deckTop"></div>
+
+          <div class="platter">
+            <div class="record" id="record">
+              <div class="recordGrooves"></div>
+              <div class="recordLabel">
+                <img id="recordLabelImg" alt="" draggable="false">
+              </div>
+              <div class="recordHole"></div>
+            </div>
+          </div>
+
+          <div class="needle" id="needle" aria-hidden="true">
+            <div class="needleArm"></div>
+            <div class="needleHead"></div>
+          </div>
+        </div>
+
+        <!-- SoundCloud player box -->
+        <div class="videoWrap" aria-label="SoundCloud player">
+          <iframe
+            id="scPlayer"
+            src=""
+            title="SoundCloud player"
+            allow="autoplay"
+          ></iframe>
+        </div>
+
+        <div class="controlsRow">
+          <button class="btn" id="stopBtn" type="button">Stop</button>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="toast" id="toast" aria-live="polite"></div>
+  </main>
+
+  <script defer src="./vinyl.js"></script>
+</body>
+</html>
