@@ -267,9 +267,9 @@ function spawnHeart(){
     } else {
       const msgs = [
         "Okay wow… adorable.",
-        "Official diagnosis: too lovable.",
-        "Redeem 1 forehead kiss.",
-        "Harry is proud (and dramatic)."
+        "My little gamer girl.",
+        "Redeem your kisses.",
+        "Harry is proud of you sweetie."
       ];
       setToast(msgs[Math.floor(Math.random()*msgs.length)]);
     }
@@ -293,4 +293,5 @@ function spawnHeart(){
     draw();
     requestAnimationFrame(loop);
   })();
+
 })();
