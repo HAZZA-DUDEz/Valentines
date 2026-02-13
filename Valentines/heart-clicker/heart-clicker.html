@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Heart Clicker 💘</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared-bg.css">
+  <link rel="stylesheet" href="./heart-clicker.css" />  
+</head>
+
+<body>
+  <a href="../index.html" class="backBtn">← Back</a>
+  <main class="page">
+    <h1 class="title">Heart Clicker 💘</h1>
+    <p class="sub">Click the heart. Buy upgrades. Become unstoppable.</p>
+
+    <div class="hud">
+      <div class="pill" id="heartsPill">Hearts: 0</div>
+      <div class="pill" id="hpsPill">Hearts/sec: 0</div>
+      <div class="pill" id="totalPill">Total clicks: 0</div>
+    </div>
+
+    <button class="bigHeartBtn" id="bigHeartBtn" type="button" aria-label="Heart clicker button">
+      <!-- Big pretty heart -->
+      <svg class="heartSvg" viewBox="0 0 64 58" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="rgba(255,255,255,0.95)"></stop>
+            <stop offset="0.35" stop-color="rgba(255,209,225,0.95)"></stop>
+            <stop offset="1" stop-color="rgba(255,89,183,0.98)"></stop>
+          </linearGradient>
+          <radialGradient id="glow" cx="35%" cy="25%" r="75%">
+            <stop offset="0" stop-color="rgba(255,255,255,0.85)"></stop>
+            <stop offset="1" stop-color="rgba(255,255,255,0)"></stop>
+          </radialGradient>
+        </defs>
+
+        <path d="M32 54C14 41 4 30 4 18C4 9 11 2 20 2C26 2 30 5 32 9C34 5 38 2 44 2C53 2 60 9 60 18C60 30 50 41 32 54Z"
+              fill="url(#g1)" stroke="rgba(255,255,255,0.60)" stroke-width="1.2" />
+        <path d="M32 54C14 41 4 30 4 18C4 9 11 2 20 2C26 2 30 5 32 9C34 5 38 2 44 2C53 2 60 9 60 18C60 30 50 41 32 54Z"
+              fill="url(#glow)" opacity="0.55" />
+      </svg>
+    </button>
+
+    <section class="shop" aria-label="Shop upgrades">
+      <div class="shopItem" id="itemNote">
+        <div>
+          <strong>Love Note</strong>
+          <span>+1 hearts/sec • Cost: <span id="costNote">25</span></span>
+        </div>
+        <button class="buyBtn" id="buyNote" type="button">Buy</button>
+      </div>
+
+      <div class="shopItem" id="itemChoco">
+        <div>
+          <strong>Chocolate Box</strong>
+          <span>+5 hearts/sec • Cost: <span id="costChoco">120</span></span>
+        </div>
+        <button class="buyBtn" id="buyChoco" type="button">Buy</button>
+      </div>
+
+      <div class="shopItem" id="itemFlowers">
+        <div>
+          <strong>Flower Bouquet</strong>
+          <span>+18 hearts/sec • Cost: <span id="costFlowers">420</span></span>
+        </div>
+        <button class="buyBtn" id="buyFlowers" type="button">Buy</button>
+      </div>
+
+      <div class="shopItem" id="itemBoost">
+        <div>
+          <strong>Engagement Energy</strong>
+          <span>x2 hearts/click • Cost: <span id="costBoost">300</span></span>
+        </div>
+        <button class="buyBtn" id="buyBoost" type="button">Buy</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="pill">Autosaves in your browser 💾</div>
+    </footer>
+
+  </main>
+
+  <script defer src="./heart-clicker.js"></script>
+</body>
+</html>

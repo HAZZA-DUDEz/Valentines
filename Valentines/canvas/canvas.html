@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Myriam’s Art Corner 🎨</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared-bg.css">
+  <link rel="stylesheet" href="./canvas.css" />
+</head>
+
+<body>
+  <a href="../index.html" class="backBtn">← Back</a>
+  <main class="page">
+    <h1 class="title">Myriam’s Art Corner 🎨</h1>
+    <p class="sub">Pick a color, choose brush size, and paint. (Works on mouse + touch.)</p>
+
+    <section class="tools" aria-label="Paint tools">
+      <div class="toolGroup">
+        <span class="pillLabel">Color</span>
+        <div class="swatches" id="swatches" aria-label="Color palette"></div>
+      </div>
+
+      <div class="toolGroup">
+        <span class="pillLabel">Brush</span>
+        <input id="brushSize" type="range" min="2" max="48" value="16" />
+        <span class="pill" id="brushPill">16</span>
+      </div>
+
+      <div class="toolGroup">
+        <button class="btn" id="clearPaint" type="button">Clear</button>
+        <button class="btn" id="savePaint" type="button">Save</button>
+      </div>
+    </section>
+
+    <section class="canvasWrap" aria-label="Painting canvas">
+      <canvas id="paintCanvas"></canvas>
+    </section>
+
+    <div class="toast" id="toast" aria-live="polite"></div>
+  </main>
+
+  <script defer src="./canvas.js"></script>
+</body>
+</html>
